@@ -174,7 +174,7 @@
         <text variable="title" text-case="title" font-style="italic" suffix="."/>
       </else-if>
       <else-if type="article article-journal article-magazine article-newspaper chapter paper-conference" match="any">
-        <text variable="title" quotes="false" suffix="."/>
+<!-- --> <text variable="title" quotes="false" suffix="."/><!-- text-case="title" -->
       </else-if>
       <else>
         <text variable="title" strip-periods="false" quotes="false"/>
@@ -256,8 +256,8 @@
       <text variable="locator"/>
     </group>
   </macro>
-  <macro name="container-title">
-    <text variable="container-title" font-style="italic"/>
+  <macro name="container-title"><!-- -->
+    <text variable="container-title" text-case="title" font-style="italic"/>
   </macro>
   <macro name="publisher">
     <group delimiter=": ">
@@ -319,10 +319,10 @@
           </choose>
           <choose>
             <if type="chapter paper-conference" match="any">
-              <group delimiter=" ">
-                <label variable="page" form="short"/>
-                <text variable="page"/>
-              </group>
+<!-- -->      <group delimiter=" ">
+<!-- -->        <label variable="page" form="short"/>
+<!-- -->        <text variable="page"/>
+<!-- -->      </group>
             </if>
           </choose>
         </group>
